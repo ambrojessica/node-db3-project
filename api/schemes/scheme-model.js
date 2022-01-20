@@ -14,7 +14,7 @@ async function findById(scheme_id) { // EXERCISE B
     .leftJoin('steps as st', 'sc.scheme_id', 'st.scheme_id')
     .where('sc.scheme_id', scheme_id)
     .select('st.*', 'sc.scheme_name', 'sc.scheme_id')
-    .orderBy('stp.step_number');
+    .orderBy('st.step_number');
 
   const result = {
     scheme_id: rows[0].scheme_id,
